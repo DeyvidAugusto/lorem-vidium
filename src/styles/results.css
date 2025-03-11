@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(to bottom, black, rgb(15,15,15));
+}
+
 .container-search {
     margin: 30px 100px;
     display: flex; 
