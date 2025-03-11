@@ -50,6 +50,12 @@
     list-style: none;
     
   }
+
+  .movie-list-title {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+  }
   
   .menu-list-item {
     margin-right: 150px;
@@ -299,7 +305,7 @@
 #footer-items {
     display: flex;
     justify-content: space-between;
-    padding: 0px 8% 24px 8%;
+    padding: 10px 8% 24px 8%;
     align-items: center;
 }
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Filter Page</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <img src="src/img/lorem-vidium-logo.png" class="logo">
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item">
+                        <a href=""><strong>Popular</strong></a> 
+                    </li>
+                    <li class="menu-list-item">
+                        <a href=""><strong>Movies</strong></a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href=""><strong>Series</strong></a>
+                    </li>
+                    <li class="menu-list-item">
+                        <a href=""><strong>Genres</strong></a>
+                    </li>
+                </ul>
+                <form action="">
+                    <input name="pesquisa" placeholder="Something in mind?">
+                    <button class="fa fa-search"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <button class="left-menu-icon fas fa-home" onclick="window.location.href='index.html'"></button>
+        <button class="left-menu-icon fas fa-bookmark">
+        
+
+    </div>
+    <main>
+        <section>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Popular</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<style>
+    /* gambiarra pra navbar ficar igual nas paginas */
+    form {
+        top: 15px;
+    }
+    .logo {
+        padding-top: 4px;
+    }
+</style>
+</html>

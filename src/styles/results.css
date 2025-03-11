@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 body {
   background: linear-gradient(to bottom, black, rgb(15,15,15));
 }
@@ -6,6 +8,11 @@ body {
     margin: 30px 100px;
     display: flex; 
     justify-content: center;
+}
+
+.search-title {
+  color: white;
+  font-family: "Oswald", sans-serif;
 }
 
 .search-movie-list-item {
