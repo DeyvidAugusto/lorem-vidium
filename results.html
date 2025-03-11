@@ -47,6 +47,23 @@
         <div class="search-movie-list"></div>
 </body>
 <script>
+    const frmPesquisa = document.querySelector('form');
+                frmPesquisa.onsubmit = (ev) => {
+                    ev.preventDefault();
+                    const pesquisa = ev.target.pesquisa.value;
+                    
+                    if (pesquisa == "") {
+                        alert("Preencha o campo de pesquisa!");
+                        return;
+                    }
+
+                    localStorage.setItem('pesquisa', pesquisa);
+                    window.location.href = 'results.html';
+                };
+
+        const arrows = document.querySelectorAll(".arrow");
+        const movieLists = document.querySelectorAll(".movie-list");
+
     const apiKey = "201bb061";
 
 function getPesquisa() {

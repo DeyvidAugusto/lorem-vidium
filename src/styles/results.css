@@ -13,8 +13,9 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    height: 300px;
-    transform: translateX(100px); 
+    max-width: 90%;
+    transform: translateX(180px);
+    
   }
 
 .serch-movie-list-item-img {
