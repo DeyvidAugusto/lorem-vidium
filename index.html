@@ -13,7 +13,7 @@
     <div class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
-                <img src="img/lorem-vidium-logo.png" class="logo">
+                <img src="src/img/lorem-vidium-logo.png" class="logo">
             </div>
             <div class="menu-container">
                 <ul class="menu-list">
@@ -140,21 +140,18 @@
     </div>
     <script>
         const frmPesquisa = document.querySelector('form');
-        frmPesquisa.onsubmit = (ev) => {
-            ev.preventDefault();
-            const pesquisa = ev.target.pesquisa.value;
-            
-            if (pesquisa == "") {
-                alert("Preencha o campo de pesquisa!");
-                return;
-            }
+                frmPesquisa.onsubmit = (ev) => {
+                    ev.preventDefault();
+                    const pesquisa = ev.target.pesquisa.value;
+                    
+                    if (pesquisa == "") {
+                        alert("Preencha o campo de pesquisa!");
+                        return;
+                    }
 
-            localStorage.setItem('pesquisa', pesquisa);
-            window.location.href = 'results.html';
-        };
-
-
-        
+                    localStorage.setItem('pesquisa', pesquisa);
+                    window.location.href = 'results.html';
+                };
 
         const arrows = document.querySelectorAll(".arrow");
         const movieLists = document.querySelectorAll(".movie-list");
