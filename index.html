@@ -51,13 +51,6 @@
                 <button class="featured-button">ASSISTIR</button>
             </div>
             <div class="movie-list-container">
-                <div class="movie-list-wrapper">
-                    <div class="search-movie-list">
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </div>
-            </div>
-            <div class="movie-list-container">
                 <h1 class="movie-list-title">LANÇAMENTOS</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
@@ -147,36 +140,21 @@
     </div>
     <script>
         const frmPesquisa = document.querySelector('form');
-        const apiKey = "201bb061";
-
         frmPesquisa.onsubmit = (ev) => {
             ev.preventDefault();
             const pesquisa = ev.target.pesquisa.value;
             
-            if(pesquisa == "") {
-                alert ("Preencha o campo de pesquisa!")
+            if (pesquisa == "") {
+                alert("Preencha o campo de pesquisa!");
                 return;
             }
 
-            fetch(`http://www.omdbapi.com/?s=${pesquisa}&apikey=${apiKey}`)
-                .then(result => result.json())
-                .then(json => carregaLista(json));
-        }
-
-        const carregaLista = (json) => {
-            const lista = document.querySelector('div.search-movie-list');
-            lista.innerHTML = "";
-            json.Search.forEach((element) => {
-                console.log(element);
-
-                let item = document.createElement('div');
-                item.classList.add('movie-list-item');
-
-                item.innerHTML = `<img class="movie-list-item-img" src="${element.Poster}" alt=""/> <span class="movie-list-item-title">${element.Title}</span> <button class="movie-list-item-button">Assistir</button>`;
-
-                lista.appendChild(item);
-            });
+            localStorage.setItem('pesquisa', pesquisa);
+            window.location.href = 'results.html';
         };
+
+
+        
 
         const arrows = document.querySelectorAll(".arrow");
         const movieLists = document.querySelectorAll(".movie-list");

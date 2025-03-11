@@ -1,0 +1,62 @@
+.container-search {
+    margin: 30px 100px;
+    display: flex; 
+    justify-content: center;
+}
+
+.search-movie-list-item {
+    margin: 30px;
+    position: relative;
+  }
+
+.search-movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 300px;
+    transform: translateX(100px); 
+  }
+
+.serch-movie-list-item-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+  }
+
+.search-movie-list-item-title {
+    background: linear-gradient(to top, rgba(0,0,0,0), #151515);
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    bottom: 10;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.5s all ease-in-out;
+    
+  }
+
+  .search-movie-list-item-button {
+    padding: 10px;
+    background-color: #490257;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+
+  .search-movie-list-item:hover .search-movie-list-item-title,
+  .search-movie-list-item:hover .search-movie-list-item-button {
+    opacity: 1;
+  }
