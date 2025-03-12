@@ -1,8 +1,47 @@
+const API_KEY = "0a5670fe15bf27ff26d20f707806c967";
+const BASE_URL = "https://api.themoviedb.org/3";
+const API_URL = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
+const IMG_URL = "https://image.tmdb.org/t/p/w500";
+const list = document.querySelector('div.search-movie-list');
+const SEARCH_URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&query="`;
+
+function getPesquisa() {
+    return localStorage.getItem('pesquisa');
+}
+
+getMovies(SEARCH_URL + getPesquisa());
+function getMovies(url) {
+    fetch(url).then(res => res.json()).then(data => {
+        showMovies(data.results);
+    })
+}
+
+function showMovies(data) {
+    list.innerHTML = "";
+
+    data.forEach(movie => {
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('search-movie-list-item');
+        movieEl.innerHTML = `
+        <img class="serch-movie-list-item-img" src="${IMG_URL}${movie.poster_path}" alt="${movie.title}"/> 
+        
+        <span class="search-movie-list-item-title">
+        ${movie.title}
+        </span> 
+        <button class="search-movie-list-item-button">
+        Watch
+        </button>`
+
+        list.appendChild(movieEl);
+    })
+};
+
+
 const frmPesquisa = document.querySelector('form');
 frmPesquisa.onsubmit = (ev) => {
     ev.preventDefault();
     const pesquisa = ev.target.pesquisa.value;
-    
+
     if (pesquisa == "") {
         alert("Preencha o campo de pesquisa!");
         return;
@@ -11,36 +50,3 @@ frmPesquisa.onsubmit = (ev) => {
     localStorage.setItem('pesquisa', pesquisa);
     window.location.href = 'results.html';
 };
-
-const arrows = document.querySelectorAll(".arrow");
-const movieLists = document.querySelectorAll(".movie-list");
-
-const apiKey = "201bb061";
-
-function getPesquisa() {
-return localStorage.getItem('pesquisa');
-}
-
-function carregaLista(json) {
-const lista = document.querySelector('div.search-movie-list');
-lista.innerHTML = "";
-json.Search.forEach((element) => {
-console.log(element);
-
-let item = document.createElement('div');
-item.classList.add('search-movie-list-item');
-
-item.innerHTML = `<img class="serch-movie-list-item-img" src="${element.Poster}" alt=""/> <span class="search-movie-list-item-title">${element.Title}</span> <button class="search-movie-list-item-button">Assistir</button>`;
-
-lista.appendChild(item);
-});
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-const pesquisa = getPesquisa();
-if (pesquisa) {
-fetch(`http://www.omdbapi.com/?s=${pesquisa}&apikey=${apiKey}`)
-.then(result => result.json())
-.then(json => carregaLista(json));
-}
-});

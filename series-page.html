@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="src/styles/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <title>Search Results</title>
+    <title>Series</title>
 </head>
 <body>
     <div class="navbar">
@@ -37,14 +37,22 @@
         <button class="left-menu-icon fas fa-bookmark">
 
     </div>
-    <div class="container-search">
-        <div class="search-title">
-            <h1>Series</h1>
-        </div>
-    </div>
-        <div class="search-movie-list"></div>
+    <div id="tags">
+        <div class="tag">Action</div>
+        <div class="tag">Adventure</div>
+        <div class="tag">Drama</div>
+        <div class="tag">Comedy</div>
+    </div>    
+    <main>
+        <section>
+            <div class="container-search">
+                <h1 class="search-title">Series</h1>
+            </div>
+                <div class="search-movie-list"></div>
+        </section>
+    </main>
 </body>
-<script src="./scripts/series-page.js"></script>
+<script src="scripts/script-series.js"></script>
 <style>
     /* gambiarra pra navbar ficar igual nas paginas */
     form {
