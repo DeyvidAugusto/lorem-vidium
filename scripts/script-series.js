@@ -62,7 +62,10 @@ function showMovies(data) {
 
         <span class="search-movie-list-item-title">
             ${movie.name}
-        </span> 
+        </span>
+        <span class="hidden-id">
+            ${movie.id}
+        </span>
         <button class="search-movie-list-item-button">
             Watch
         </button>`
@@ -70,6 +73,17 @@ function showMovies(data) {
     list.appendChild(movieEl);
     })
 }
+/* Mandando o movie ID para criar a pagina do filme */
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.classList.contains('search-movie-list-item-button')) {
+    const serieId = e.target.parentElement.querySelector('.hidden-id').textContent;
+    localStorage.setItem('selectedSerieId', serieId);
+    window.location.href = 'about-serie.html';
+  }
+});
+
+
+/* Filtragem por genero */
 
 const genres = [
     {
@@ -177,7 +191,6 @@ function setGenre() {
                   selectedGenre.push(genre.id);
               }
           }
-          console.log(selectedGenre)
           fetch(API_URL + '&with_genres=' + encodeURI(selectedGenre.join(',')))
               .then(res => res.json())
               .then(data => {

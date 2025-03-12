@@ -8,11 +8,13 @@ body {
     margin: 30px 100px;
     display: flex; 
     justify-content: center;
+    width: 100%;
 }
 
 .search-title {
   color: white;
   font-family: "Oswald", sans-serif;
+  transform: translateX(-110px);
 }
 
 .search-movie-list-item {
@@ -25,7 +27,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     max-width: 90%;
-    transform: translateX(180px);
+    transform: translateX(150px);
     
   }
 
