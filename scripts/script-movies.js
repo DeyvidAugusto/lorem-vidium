@@ -17,7 +17,7 @@ var prevPage = 3;
 var lastUrl = '';
 var totalPages = 100;
 
-/* Paginação */
+
 
 getMovies(API_URL)
 function getMovies(url) {
@@ -62,7 +62,10 @@ function showMovies(data) {
 
         <span class="search-movie-list-item-title">
             ${movie.title}
-        </span> 
+        </span>
+        <span class="hidden-id">
+            ${movie.id}
+        </span>
         <button class="search-movie-list-item-button">
             Watch
         </button>`
@@ -70,6 +73,17 @@ function showMovies(data) {
     list.appendChild(movieEl);
     })
 }
+/* Mandando o movie ID para criar a pagina do filme */
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.classList.contains('search-movie-list-item-button')) {
+    const movieId = e.target.parentElement.querySelector('.hidden-id').textContent;
+    localStorage.setItem('selectedMovieId', movieId);
+    window.location.href = 'about.html';
+  }
+});
+
+
+/* Filtragem por genero */
 
 const genres = [
     {

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import url(info-movie.css);
 @import url(results.css);
+@import url(about.css);
 
 * {
     margin: 0;
@@ -366,6 +367,11 @@
   padding: 10px 15px;
   border-radius: 10px;
   border: 2px solid #490257;
+}
+
+.hidden-id {
+  visibility: hidden;
+  font-size: 0px;
 }
 
   
