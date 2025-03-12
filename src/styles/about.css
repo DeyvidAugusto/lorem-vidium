@@ -86,3 +86,20 @@
 .movie-cast-name {
     color: white;
 }
+
+.know-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border: 5px solid black;
+    width: 580px;
+    background: #490257;
+    cursor: pointer;
+}
+
+.know-more:hover {
+    background: purple;
+}

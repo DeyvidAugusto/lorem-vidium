@@ -31,12 +31,19 @@ function showMovieDetail(movie) {
     <h2 class="movie-detail-title">
         ${movie.title}
     </h2>
+    <button class="know-more" id="${movie.id}">Watch Trailer</button>
+
     <p class="movie-detail-overview">
         ${movie.overview}
     </p>`;
 
+
     list.appendChild(movieEl);
-}
+
+    document.getElementById(movie.id).addEventListener('click', () => {
+        console.log(movie.id);
+    })
+};
 
 getMovieCredits(movieId);
 
