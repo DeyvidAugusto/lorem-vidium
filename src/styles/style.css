@@ -91,6 +91,7 @@
   
   .menu-list-item.active {
     font-weight: bold;
+    text-decoration: none;
   }
 
   .sidebar {
