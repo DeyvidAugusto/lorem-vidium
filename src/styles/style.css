@@ -58,6 +58,11 @@
     display: inline-block;
     cursor: pointer;
   }
+
+  .tag.highlight {
+    background: white;
+    color: #490257;
+  }
   
   .menu-container {
     flex: 2;
@@ -332,6 +337,11 @@
 #copyright {
     color: purple;
     font-weight: 500;
+}
+
+.no-results {
+  color: #490257;
+  font-size: 30px;
 }
 
   

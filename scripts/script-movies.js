@@ -8,7 +8,12 @@ const SEARCH_URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&query="`;
 getMovies(API_URL)
 function getMovies(url) {
     fetch(url).then(res => res.json()). then(data => {
-        showMovies(data.results);
+        if(data.results.length !== 0) {
+          showMovies(data.results);
+        }
+        else {
+          list.innerHTML = "<h1 class='no-results'>No Results Found</h1>";
+        }
     })
 }
 
@@ -138,15 +143,27 @@ function setGenre() {
                   selectedGenre.push(genre.id);
               }
           }
-          console.log(selectedGenre)
           fetch(API_URL + '&with_genres=' + encodeURI(selectedGenre.join(',')))
               .then(res => res.json())
               .then(data => {
                   showMovies(data.results);
               });
+          highlightSelection();
       });
       tagEl.appendChild(t);
   })
+}
+
+function highlightSelection() {
+    document.querySelectorAll('.tag').forEach(tag => {
+      tag.classList.remove('highlight');
+    })
+    if(selectedGenre.length != 0) {
+        selectedGenre.forEach(id => {
+          const highlightedTag = document.getElementById(id);
+          highlightedTag.classList.add('highlight');
+        })
+    }
 }
 
 /* Script de Pesquisa */
