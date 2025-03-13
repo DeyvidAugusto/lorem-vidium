@@ -42,8 +42,38 @@ function showMovieDetail(movie) {
 
     document.getElementById(movie.id).addEventListener('click', () => {
         console.log(movie.id);
+        openNav(movie)
     })
 };
+
+const overlayContent = document.getElementById('overlay-content');
+function openNav(movie) {
+    let id = movie.id;
+    fetch(BASE_URL + '/movie/'+id+'/videos?api_key='+API_KEY).then(res => res.json()).then(videodata => {
+    document.getElementById("myNav").style.display = "block";
+    console.log(videodata);
+    if(videodata){
+        document.getElementById("myNav").style.width = "100%";
+        if(videodata.results.length > 0) {
+            var embed = [];
+            videodata.results.forEach(video => {
+                let {name, key, site} = video;
+                if (site == "YouTube"){
+                    embed.push(`<iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`);
+                }
+            })
+            
+            overlayContent.innerHTML = embed.join('');
+        }else{
+            overlayContent.innerHTML = '<h1 class="no-results">No Results Found</h1>';
+        }
+    }
+    })
+}
+
+  function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+  }
 
 getMovieCredits(movieId);
 
