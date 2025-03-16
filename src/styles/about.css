@@ -95,8 +95,8 @@
     font-size: 30px;
     color: white;
     border: 5px solid black;
-    width: 580px;
-    background: #490257;
+    width: 570px;
+    background: #8031a7;
     cursor: pointer;
 }
 
@@ -128,7 +128,7 @@
   .overlay a {
     padding: 8px;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 60px;
     color: #818181;
     display: block; 
     transition: 0.3s; 
@@ -152,4 +152,46 @@
       top: 15px;
       right: 35px;
     }
+  }
+
+  .embed.hide {
+    display: none;
+  }
+
+  .embed.show {
+    display: inline-block;
+  }
+
+  .arrow {
+    position: absolute;
+  }
+
+  .arrow.left-arrow {
+    left:20%;
+    top: 400px;
+    width: 90px;
+  }
+
+  .arrow.right-arrow {
+    right:20%;
+    top: 400px;
+    width: 90px;
+  }
+
+  .dots {
+    margin-top: 30px;
+  }
+
+  .dots.dot {
+    padding: 10px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+  }
+
+  .dots.dot.active {
+    background-color: #8031a7;
   }
