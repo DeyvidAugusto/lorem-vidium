@@ -30,7 +30,9 @@ function showMovies(data) {
         </span> 
         <button class="search-movie-list-item-button">
         Watch
-        </button>`
+        </button>
+        <span class="hidden-id">
+        ${movie.id}</span>`
 
         list.appendChild(movieEl);
     })
@@ -50,3 +52,11 @@ frmPesquisa.onsubmit = (ev) => {
     localStorage.setItem('pesquisa', pesquisa);
     window.location.href = 'results.html';
 };
+
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('search-movie-list-item-button')) {
+      const movieId = e.target.parentElement.querySelector('.hidden-id').textContent;
+      localStorage.setItem('selectedMovieId', movieId);
+      window.location.href = 'about.html';
+    }
+  });

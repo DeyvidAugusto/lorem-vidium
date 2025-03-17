@@ -170,28 +170,36 @@
     left:20%;
     top: 400px;
     width: 90px;
+    font-size: 100px;
   }
 
   .arrow.right-arrow {
     right:20%;
     top: 400px;
     width: 90px;
+    font-size: 100px;
   }
 
   .dots {
     margin-top: 30px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 300px;
   }
 
-  .dots.dot {
-    padding: 10px;
-    border-radius: 50%;
-    border: 5px solid var(--secondary-color);
+  .dots .dot {
+    padding: 2.5px 12.5px;
+    border-radius: 30%;
+    border: 4px solid #8031a7;
     color: white;
     font-size: 20px;
     font-weight: 600;
     margin: 5px;
   }
 
-  .dots.dot.active {
+  .dots .dot.active {
     background-color: #8031a7;
   }

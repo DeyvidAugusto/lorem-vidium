@@ -77,7 +77,7 @@ function openNav(movie) {
             <div class="dots">${dots.join('')}</div>
 
             `
-            overlayContent.innerHTML = embed.join('')
+            overlayContent.innerHTML = content
             activeSlide = 0;
             showVideos();
         }else{
@@ -108,6 +108,13 @@ function showVideos() {
             embedTag.classList.remove('show');
         }
     })
+    dots.forEach((dot, indx) => {
+        if(activeSlide == indx){
+          dot.classList.add('active');
+        }else{
+          dot.classList.remove('active')
+        }
+      })
 }
 
     const leftArrow = document.getElementById('left-arrow');
