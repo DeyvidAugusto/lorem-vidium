@@ -11,7 +11,9 @@
     <div class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
-                <img src="src/img/lorem-vidium-logo.png" class="logo">
+                <a href="index.html">
+                    <img src="src/img/lorem-vidium-logo.png" class="logo">
+                </a>
             </div>
             <div class="menu-container">
                 <ul class="menu-list">
@@ -32,11 +34,16 @@
             </div>
         </div>
     </div>
-    <div class="sidebar">
-        <button class="left-menu-icon fas fa-home" onclick="window.location.href='index.html'"></button>
-        <button class="left-menu-icon fas fa-bookmark" onclick="window.location.href='favs.html'"></button>
-
+    <div class="navigation">
+    <div id="nav-ball" class="nav-btn"></div>
+    <div id="nav-menu" class="menu">
+        <a href="account.html">My Account</a>
+        <a href="favs.html">Favorites</a>
+        <a href="#watchlist">Watchlist</a>
+        <a href="#settings">Settings</a>
     </div>
+</div>
+   
     <div id="tags">
         <div class="tag">Action</div>
         <div class="tag">Adventure</div>
@@ -58,13 +65,4 @@
     </div>
 </body>
 <script src="./scripts/script-movies.js"></script>
-<style>
-    /* gambiarra pra navbar ficar igual nas paginas */
-    form {
-        top: 15px;
-    }
-    .logo {
-        padding-top: 4px;
-    }
-</style>
 </html>
