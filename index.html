@@ -33,15 +33,16 @@
             </div>
         </div>
     </div>
-<div class="navigation">
-    <div id="nav-ball" class="nav-btn"></div>
-    <div id="nav-menu" class="menu">
-        <a href="account.html">My Account</a>
-        <a href="favs.html">Favorites</a>
-        <a href="#watchlist">Watchlist</a>
-        <a href="#settings">Settings</a>
+    <div class="navigation">
+        <div id="nav-ball" class="nav-btn"></div>
+        <div id="nav-menu" class="menu">
+            <a href="account.html">My Account</a>
+            <a href="#favs.html">Favorites</a>
+            <a href="#watchlist">Watchlist</a>
+            <a href="#settings.html">Settings</a>
+            <a href="register.html">Leave Account</a>
+        </div>
     </div>
-</div>
     </div>
     </div>
     <main>
@@ -49,9 +50,17 @@
             <div class="content-container">
                 <div class="featured-content"
                     style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg');">
-                    <img class="featured-title" src="https://image.tmdb.org/t/p/original/7GN6eZ1xw4apwobsmohLtgZB6K6.png" alt="">
-                    <p class="featured-desc">When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.</p>
-                    <button class="featured-button" onclick="redirectToMovie()">Watch</button>
+                    <video class="featured-video" loop muted autoplay onclick="redirectToMovie()">
+                        <a href="x" class="href"></a>
+                        <source src="src/img/interstellar trailer.mp4" type="video/mp4">
+                    </video>
+                    <div class="gradient-overlay">
+                        <img class="featured-title"
+                        src="https://image.tmdb.org/t/p/original/7GN6eZ1xw4apwobsmohLtgZB6K6.png" alt="">
+                        <p class="featured-desc">When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot,
+                            Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new
+                            planet for humans.</p>
+                    </div>
                 </div>
                 <section>
                     <div class="movie-list-container">
@@ -83,15 +92,15 @@
             </span>
         </div>
     </footer>
-<script src="scripts/index.js"></script>
-<script src="./scripts/search.js"></script>
-<script>
-    function redirectToMovie() {
-      const movieId = 157336; 
-      localStorage.setItem("selectedMovieId", movieId); 
-      window.location.href = `about.html?id=${movieId}`;
-    }
-  </script>
+    <script src="scripts/index.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script>
+        function redirectToMovie() {
+            const movieId = 157336;
+            localStorage.setItem("selectedMovieId", movieId);
+            window.location.href = `about.html?id=${movieId}`;
+        }
+    </script>
 </body>
-</html>
 
+</html>
