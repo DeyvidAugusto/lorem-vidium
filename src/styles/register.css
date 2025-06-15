@@ -58,20 +58,11 @@ button:hover {
     background-color: #6a1cb7;
 }
 
-.logo-container {
-    flex: 1;
-}
-
-.logo {
-    padding: 10px 20px;
-    height: 60px;
-    color: #490257;
-}
 
 .return {
     font-size: 60px;
     position: absolute;
-    top: 120px;
+    top: 40px;
     left: 40px;
     cursor: pointer;
 }
@@ -86,4 +77,15 @@ a {
 
 input {
     width: 400px;
+}
+.log-in-container {
+    background-color: #2a2a2a;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(138, 43, 226, 0.5);
+    text-align: center;
+}
+
+.log-in-container h1 {
+    color: #8a2be2;
 }
