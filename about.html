@@ -1,4 +1,5 @@
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>About</title>
 </head>
+
 <body>
     <div class="navbar">
         <div class="navbar-container">
@@ -19,12 +21,14 @@
                     <li class="menu-list-item"><a href="movies-page.html"><strong>Movies</strong></a></li>
                     <li class="menu-list-item"><a href="series-page.html"><strong>Series</strong></a></li>
                 </ul>
-                <form action="">
-                    <input name="pesquisa" placeholder="Something in mind?">
-                    <button class="fa fa-search"></button>
-                </form>
             </div>
         </div>
+        <form action="" class="search-bar">
+            <input type="search" name="search" pattern=".*\S.*" required>
+            <button class="search-btn" type="submit">
+                <span>Search</span>
+            </button>
+        </form>
     </div>
     <div class="navigation">
         <div id="nav-ball" class="nav-btn"></div>
@@ -55,4 +59,5 @@
 
     <script src="./scripts/about.js"></script>
 </body>
+
 </html>
