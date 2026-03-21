@@ -4,57 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="src/styles/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/results.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>Movies</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="src/img/lorem-vidium-logo.png" class="logo">
-                </a>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/img/lorem-vidium-logo.png" class="logo" alt="Lorem Vidium">
+            </a>
+            <nav class="nav-links">
+                <a href="movies-page.html" class="nav-link">Movies</a>
+                <a href="series-page.html" class="nav-link">Series</a>
+                <a href="favs.html" class="nav-link">Favorites</a>
+            </nav>
+            <div class="nav-right">
+                <form class="search-bar" action="">
+                    <input type="search" name="pesquisa" pattern=".*\S.*" required>
+                    <button class="search-btn" type="submit"><span>Search</span></button>
+                </form>
+                <div class="nav-user">
+                    <div id="nav-ball" class="nav-btn"></div>
+                    <div id="nav-menu" class="menu">
+                        <a href="account.html">My Account</a>
+                        <a href="favs.html">Favorites</a>
+                        <a href="homepage.html">Leave Account</a>
+                    </div>
+                </div>
             </div>
-            <div class="menu-container">
-                <ul class="menu-list">
-                    <li class="menu-list-item">
-                        <a href="movies-page.html"><strong>Movies</strong></a>
-                    </li>
-                    <li class="menu-list-item">
-                        <a href="series-page.html"><strong>Series</strong></a>
-                    </li>
-                    <li class="menu-list-item">
-                        <a href=""></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <form action="" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required>
-            <button class="search-btn" type="submit">
-                <span>Search</span>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
-        </form>
-    </div>
-    <div class="navigation">
-        <div id="nav-ball" class="nav-btn"></div>
-        <div id="nav-menu" class="menu">
-            <a href="account.html">My Account</a>
-            <a href="favs.html">Favorites</a>
-            <a href="#watchlist">Watchlist</a>
-            <a href="#settings.html">Settings</a>
-            <a href="homepage.html">Leave Account</a>
         </div>
-    </div>
+        <div class="nav-drawer" id="nav-drawer">
+            <nav class="nav-drawer-links">
+                <a href="movies-page.html">Movies</a>
+                <a href="series-page.html">Series</a>
+                <a href="favs.html">Favorites</a>
+                <a href="account.html">My Account</a>
+            </nav>
+            <form class="search-bar-drawer" action="">
+                <input type="search" name="pesquisa" pattern=".*\S.*" required placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
 
-    <div id="tags">
-        <div class="tag">Action</div>
-        <div class="tag">Adventure</div>
-        <div class="tag">Drama</div>
-        <div class="tag">Comedy</div>
-    </div>
+    <div id="tags"></div>
     <main>
         <section>
             <div class="container-search">
@@ -68,7 +67,11 @@
         <div class="page" id="current">1</div>
         <div class="page" id="next">Next Page</div>
     </div>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/movies.js"></script>
 </body>
-<script src="./scripts/script-movies.js"></script>
 
 </html>

@@ -1,76 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
-body {
-  background: linear-gradient(to bottom, black, rgb(15,15,15));
-}
-
 .container-search {
-    margin: 30px 100px;
-    display: flex; 
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 32px 48px 8px;
 }
 
 .search-title {
-  color: white;
+  color: #f1f1f1;
   font-family: "Oswald", sans-serif;
-  transform: translateX(-110px);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-left: 4px solid #8b5cf6;
+  padding-left: 14px;
+}
+
+.search-movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px 32px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .search-movie-list-item {
-    margin: 30px;
-    position: relative;
-  }
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
 
-.search-movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 90%;
-    transform: translateX(150px);
-    
-  }
+.search-movie-list-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.35);
+}
 
 .serch-movie-list-item-img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: all 0.5s ease-in-out;
-  }
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: opacity 0.25s ease;
+}
+
+.search-movie-list-item:hover .serch-movie-list-item-img {
+  opacity: 0.4;
+}
 
 .search-movie-list-item-title {
-    background: linear-gradient(to top, rgba(0,0,0,0), #151515);
-    color: white;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px;
-    position: absolute;
-    bottom: 10;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transition: 0.5s all ease-in-out;
-    
-  }
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+  padding: 8px 10px;
+  color: #f1f1f1;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
 
-  .search-movie-list-item-button {
-    padding: 10px;
-    background-color: #490257;
-    color: white;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 20px;
-    left: 50px;
-    opacity: 0;
-    transition: 1s all ease-in-out;
-  }
+.search-movie-list-item-button {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 20px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, box-shadow 0.25s ease;
+}
 
-  .search-movie-list-item:hover .search-movie-list-item-title,
-  .search-movie-list-item:hover .search-movie-list-item-button {
-    opacity: 1;
-  }
+.search-movie-list-item-button:hover {
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+}
+
+.search-movie-list-item:hover .search-movie-list-item-title,
+.search-movie-list-item:hover .search-movie-list-item-button {
+  opacity: 1;
+}

@@ -1,91 +1,150 @@
+/* login.html e register.html */
+
 body {
-    background-color: black;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background: radial-gradient(ellipse at top, #1a0a2e 0%, #0d0d0d 60%);
+  color: #f1f1f1;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.navbar {
-    width: 100%;
-    padding: 15px 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
+.return {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  font-size: 28px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
-.register-container {
-    background-color: #2a2a2a;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(138, 43, 226, 0.5);
-    text-align: center;
+.return:hover,
+.return i {
+  color: #8b5cf6;
 }
 
-.register-container h1 {
-    color: #8a2be2;
+.return a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Glass card */
+.register-container,
+.log-in-container {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 48px 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 8px 48px rgba(139, 92, 246, 0.15), 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.register-container h1,
+.log-in-container h1 {
+  color: #f1f1f1;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 input {
-    margin: 10px 0;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
+  width: 100%;
+  margin: 8px 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f1f1f1;
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.08);
 }
 
 button {
-    background-color: #8a2be2;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 300px;
-    margin: 10px auto 0 auto;
+  width: 100%;
+  margin: 20px 0 0;
+  padding: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #6a1cb7;
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.5);
+  transform: translateY(-1px);
 }
 
-
-.return {
-    font-size: 60px;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    cursor: pointer;
+button:active {
+  transform: translateY(0);
 }
 
-i {
-    color: lightgray;
+.register-container p,
+.log-in-container p {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
 }
 
-a {
-    color: purple;
+.register-container p a,
+.log-in-container p a {
+  color: #a78bfa;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-input {
-    width: 400px;
-}
-.log-in-container {
-    background-color: #2a2a2a;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(138, 43, 226, 0.5);
-    text-align: center;
+.register-container p a:hover,
+.log-in-container p a:hover {
+  color: #c4b5fd;
 }
 
-.log-in-container h1 {
-    color: #8a2be2;
+@media (max-width: 480px) {
+  .register-container,
+  .log-in-container {
+    padding: 32px 24px;
+    border-radius: 16px;
+    margin: 16px;
+  }
+
+  .return {
+    top: 20px;
+    left: 20px;
+    font-size: 22px;
+  }
 }

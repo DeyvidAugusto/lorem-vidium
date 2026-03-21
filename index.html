@@ -1,74 +1,76 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>Lorem Vidium</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="src/img/lorem-vidium-logo.png" class="logo">
-                </a>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/img/lorem-vidium-logo.png" class="logo" alt="Lorem Vidium">
+            </a>
+            <nav class="nav-links">
+                <a href="movies-page.html" class="nav-link">Movies</a>
+                <a href="series-page.html" class="nav-link">Series</a>
+                <a href="favs.html" class="nav-link">Favorites</a>
+            </nav>
+            <div class="nav-right">
+                <form class="search-bar" action="">
+                    <input type="search" name="pesquisa" pattern=".*\S.*" required>
+                    <button class="search-btn" type="submit"><span>Search</span></button>
+                </form>
+                <div class="nav-user">
+                    <div id="nav-ball" class="nav-btn"></div>
+                    <div id="nav-menu" class="menu">
+                        <a href="account.html">My Account</a>
+                        <a href="favs.html">Favorites</a>
+                        <a href="homepage.html">Leave Account</a>
+                    </div>
+                </div>
             </div>
-            <div class="menu-container">
-                <ul class="menu-list">
-                    <li class="menu-list-item">
-                        <a href="movies-page.html"><strong>Movies</strong></a>
-                    </li>
-                    <li class="menu-list-item">
-                        <a href="series-page.html"><strong>Series</strong></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <form action="" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required>
-            <button class="search-btn" type="submit">
-                <span>Search</span>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
-        </form>
-    </div>
-    <div class="navigation">
-        <div id="nav-ball" class="nav-btn"></div>
-        <div id="nav-menu" class="menu">
-            <a href="account.html">My Account</a>
-            <a href="favs.html">Favorites</a>
-            <a href="#watchlist">Watchlist</a>
-            <a href="#settings.html">Settings</a>
-            <a href="homepage.html">Leave Account</a>
         </div>
-    </div>
-    </div>
-    </div>
+        <div class="nav-drawer" id="nav-drawer">
+            <nav class="nav-drawer-links">
+                <a href="movies-page.html">Movies</a>
+                <a href="series-page.html">Series</a>
+                <a href="favs.html">Favorites</a>
+                <a href="account.html">My Account</a>
+            </nav>
+            <form class="search-bar-drawer" action="">
+                <input type="search" name="pesquisa" pattern=".*\S.*" required placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
     <main>
         <div class="container">
             <div class="content-container">
                 <div class="featured-content"
                     style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('https://image.tmdb.org/t/p/original/xJHokMbljvjADYdit5fK5VQsXEG.jpg');">
                     <video class="featured-video" loop muted autoplay onclick="redirectToMovie()">
-                        <a href="x" class="href"></a>
-                        <source src="src/img/interstellar trailer.mp4" type="video/mp4">
+                        <source src="assets/img/interstellar trailer.mp4" type="video/mp4">
                     </video>
                     <div class="gradient-overlay">
                         <img class="featured-title"
-                            src="https://image.tmdb.org/t/p/original/7GN6eZ1xw4apwobsmohLtgZB6K6.png" alt="">
+                            src="https://image.tmdb.org/t/p/original/7GN6eZ1xw4apwobsmohLtgZB6K6.png" alt="Interstellar">
                         <p class="featured-desc">When Earth becomes uninhabitable in the future, a farmer and ex-NASA
-                            pilot,
-                            Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a
-                            new
-                            planet for humans.</p>
+                            pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a
+                            new planet for humans.</p>
                     </div>
                 </div>
                 <section>
                     <div class="movie-list-container">
-                        <h1 class="movie-list-title">WHAT`S NEW</h1>
+                        <h1 class="movie-list-title">WHAT'S NEW</h1>
                         <div class="movie-list-wrapper">
                             <div class="movie-list"></div>
                             <i class="fas fa-chevron-left arrow l-arrow"></i>
@@ -91,17 +93,18 @@
     </main>
     <footer>
         <div id="footer-items">
-            <span id="copyright">
-                &copy 2025 Daniel Pimenta
-            </span>
+            <span id="copyright">&copy; 2025 Daniel Pimenta</span>
         </div>
     </footer>
-    <script src="scripts/index.js"></script>
-    <script src="./scripts/search.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/search.js"></script>
     <script>
         function redirectToMovie() {
             const movieId = 157336;
-            localStorage.setItem("selectedMovieId", movieId);
+            localStorage.setItem('selectedMovieId', movieId);
             window.location.href = `about.html?id=${movieId}`;
         }
     </script>

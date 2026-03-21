@@ -3,36 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-
-        const username = form.elements['username'].value;
-        const email = form.elements['email'].value;
+        const username = form.elements['username'].value.trim();
+        const email = form.elements['email'].value.trim();
         const password = form.elements['password'].value;
         const confirmPassword = form.elements['confirm-password'].value;
 
+        if (!username || !email || !password) {
+            alert('Preencha todos os campos.');
+            return;
+        }
         if (password !== confirmPassword) {
-            alert('Passwords do not match!');
+            alert('As senhas não coincidem.');
             return;
         }
 
-        fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Registration successful!');
-                window.location.href = 'login.html';
-            } else {
-                alert('Registration failed!');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        const result = AUTH.register(username, email, password);
+        if (result.ok) {
+            alert('Conta criada com sucesso! Faça o login.');
+            window.location.href = 'login.html';
+        } else {
+            alert(result.msg);
+        }
     });
 });
